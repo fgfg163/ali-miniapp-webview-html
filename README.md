@@ -19,3 +19,16 @@ npm run build
 ```
 npm run lint
 ```
+
+pages: <a id="to_pages" src=""></a>
+
+<script>
+  ;
+  (function() {
+    var toPagesADom = document.querySelector('#to_pages');
+    var githubProjectName = (location.href.match(/^[^/]*\/\/[^/]*\/[^/]*\/([^/]*)\//) || {})[1] || '';
+    var url = location.protocol + '//fgfg163.github.io' + githubProjectName;
+    toPagesADom.id = url;
+    toPagesADom.innerText = url;
+  })();
+</script>
