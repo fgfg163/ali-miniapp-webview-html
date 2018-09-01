@@ -20,16 +20,4 @@ npm run build
 npm run lint
 ```
 
-pages: <a id="to_pages" src=""></a>
-
-<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
-<script>
-  ;
-  (function() {
-    var toPagesADom = document.querySelector('#to_pages');
-    var githubProjectName = (location.href.match(/^[^/]*\/\/[^/]*\/[^/]*\/([^/]*)\//) || {})[1] || '';
-    var url = location.protocol + '//fgfg163.github.io' + githubProjectName;
-    toPagesADom.id = url;
-    toPagesADom.innerText = url;
-  })();
-</script>
+pages: <a src="https://fgfg163.github.io/ali-miniapp-webview-html">https://fgfg163.github.io/ali-miniapp-webview-html</a>
