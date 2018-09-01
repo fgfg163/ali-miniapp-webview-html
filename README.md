@@ -22,6 +22,7 @@ npm run lint
 
 pages: <a id="to_pages" src=""></a>
 
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 <script>
   ;
   (function() {
