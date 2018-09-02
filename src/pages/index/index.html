@@ -4,17 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+    <script src="https://cdn.bootcss.com/vConsole/3.2.0/vconsole.min.js"></script>
     <script>
-      new VConsole();
+    new VConsole();
     </script>
     <script>
-      console.log(navigator.userAgent);
-      if (navigator.userAgent.indexOf('AlipayClient') > -1) {
-        document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
-      }
-      console.log(window);
-      console.log(my);
+    if (navigator.userAgent.indexOf('AlipayClient') > -1) {
+      document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
+    }
     </script>
     <script src="<%= BASE_URL %>ali-miniapp-bridge.js"></script>
 
@@ -30,18 +27,16 @@
     <!-- built files will be auto injected -->
 
     <script>
-      //      // 网页向小程序 postMessage 消息
-      //      my.postMessage({ name: "测试web-view" });
-      //
-      //      // 接收来自小程序的消息。
-      //      my.onMessage = function (e) {
-      //        console.log(e); //{'sendToWebView': '1'}
-      //      }
-      //
-      //      // 判断是否运行在小程序环境里
-      //      my.getEnv(function (res) {
-      //        console.log(res.miniprogram) // true
-      //      });
+    setTimeout(function () {
+//      myClone.getLocation({
+//        success: function (t1, t2) {
+//          alert(t1);
+//        },
+//        fail: function (err) {
+//          alert(t2);
+//        }
+//      });
+    }, 1000);
     </script>
   </body>
 </html>

@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'app',
+  data: function () {
+    return {}
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -14,7 +23,3 @@
   margin-top: 60px;
 }
 </style>
-
-<script>
-export default {}
-</script>
