@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+    <script>
+      new VConsole();
+    </script>
     <script>
       if (navigator.userAgent.indexOf('AlipayClient') > -1) {
         document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
       }
     </script>
     <script src="<%= BASE_URL %>ali-miniapp-bridge.js"></script>
-    <script src="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
-    <script>
-      new VConsole();
-    </script>
+
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>ali-miniapp-webview-html</title>
   </head>
@@ -22,7 +23,6 @@
       <strong>We're sorry but ali-miniapp-webview-html doesn't work properly without JavaScript enabled. Please enable
         it to continue.</strong>
     </noscript>
-    <div id="result"></div>
     <div id="app"></div>
     <!-- built files will be auto injected -->
 

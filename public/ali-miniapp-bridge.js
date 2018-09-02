@@ -18,11 +18,6 @@
   my.onMessage = function (msg) {
     var action = msg;
     if (typeof (action) === 'object' && typeof(action.type) === 'string') {
-      switch (action.type) {
-        INNER_GET_CONFIG_CALL_BACK: {
-          break;
-        }
-      }
       if (action.type === INNER_GET_CONFIG_CALL_BACK) {
         var list = action.list || [];
         myClone = {};
@@ -43,7 +38,7 @@
             } else {
               myClone[field.name] = field.value;
             }
-          })(fnList[key]);
+          })(list[key]);
         }
       } else if (action.type === INNER_CALL_FUNCTION_CALL_BACK) {
         var cbObj = callbackMap[action.id];
@@ -105,6 +100,7 @@
       }
     }
   };
+
   my.postMessage({ type: INNER_GET_CONFIG });
 
   // // regist function to frame
