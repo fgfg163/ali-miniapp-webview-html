@@ -12,24 +12,19 @@
   var callId = 0;
   var callbackMap = {};
   var registMap = {};
-  var myClone = {};
+  global.myClone = {};
 
   // get my function list
   my.onMessage = function (msg) {
     var action = msg;
     if (typeof (action) === 'object' && typeof(action.type) === 'string') {
-      switch (action.type) {
-        INNER_GET_CONFIG_CALL_BACK: {
-          break;
-        }
-      }
       if (action.type === INNER_GET_CONFIG_CALL_BACK) {
         var list = action.list || [];
-        myClone = {};
+        global.myClone = {};
         for (var key in list) {
           (function (field) {
             if (field.type === 'function') {
-              myClone[field.name] = function () {
+              global.myClone[field.name] = function () {
                 var args = Array.prototype.slice.call(arguments, 0);
                 var thisId = callId++;
                 callbackMap[thisId] = args[0];
@@ -41,9 +36,9 @@
                 });
               };
             } else {
-              myClone[field.name] = field.value;
+              global.myClone[field.name] = field.value;
             }
-          })(fnList[key]);
+          })(list[key]);
         }
       } else if (action.type === INNER_CALL_FUNCTION_CALL_BACK) {
         var cbObj = callbackMap[action.id];
@@ -105,6 +100,7 @@
       }
     }
   };
+
   my.postMessage({ type: INNER_GET_CONFIG });
 
   // // regist function to frame
@@ -131,13 +127,8 @@
   // };
   //
   // // clear regist function to frame
-  // myClone.registClear = function (list) {
+  // global.myClone.registClear = function (list) {
   //   registMap = {};
   //   my.postMessage({ type: INNER_CLEAR_REGIST_FUNC });
   // };
-
-  global.myClone = {};
-  for (var key in myClone) {
-    global.myClone[key] = myClone[key];
-  }
 })(window || global, my);
